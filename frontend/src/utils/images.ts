@@ -1,0 +1,6 @@
+export function initLazyImages() {
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+    if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+  });
+}

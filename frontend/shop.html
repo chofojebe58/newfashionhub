@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FashionHub | Shop</title>
+    <meta name="description" content="Shop FashionHub — curated collections and timeless wardrobe staples." />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to products</a>
+
+    <div class="page-shell">
+      <div class="container">
+        <header class="topbar">
+          <div class="brand-wrap">
+            <a class="brand" href="index.html">LUNORA</a>
+            <nav class="main-nav" aria-label="Main navigation" data-nav-slot>
+              <a href="shop.html#featured">New In</a>
+              <a href="shop.html#featured">Best Sellers</a>
+              <a href="shop.html#categories">Accessories</a>
+              <a href="lookbook.html">Journal</a>
+            </nav>
+          </div>
+          <div class="account-slot" data-account-slot></div>
+          <button class="cart-toggle" type="button" aria-label="Open cart" aria-expanded="false" aria-controls="cart-panel">
+            <span>Cart</span>
+            <span class="cart-count">0</span>
+          </button>
+        </header>
+
+        <aside id="cart-panel" class="cart-panel" role="dialog" aria-modal="false"
+          aria-hidden="true" aria-labelledby="cart-title" aria-live="polite">
+          <div class="cart-header">
+            <h3 id="cart-title">Your Cart</h3>
+            <button class="close-cart" type="button" aria-label="Close cart">×</button>
+          </div>
+          <ul class="cart-items">
+            <li class="empty-cart">Your cart is empty.</li>
+          </ul>
+          <div class="cart-footer">
+            <div class="cart-total-row">
+              <span>Total</span>
+              <strong class="cart-total">$0.00</strong>
+            </div>
+            <button class="checkout-btn" type="button">Checkout</button>
+          </div>
+        </aside>
+
+        <main id="main">
+          <section class="shop-hero">
+            <div class="shop-hero-copy">
+              <p class="eyebrow">Curated edits</p>
+              <h1>Shop the collection</h1>
+              <p>Designed for everyday ease, elevated for every occasion.</p>
+            </div>
+            <div class="shop-hero-actions">
+              <a href="#featured" class="btn btn-primary">Shop Featured</a>
+              <a href="lookbook.html" class="btn btn-light">View Lookbook</a>
+            </div>
+          </section>
+
+          <div class="search-filters-bar">
+            <div class="search-bar" role="search">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+              <input type="search" id="search-input" placeholder="Search products..." aria-label="Search products" />
+            </div>
+            <button class="filters-toggle" id="filters-toggle" type="button"
+              aria-expanded="false" aria-controls="filters-panel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M3 3h18v18H3z"></path>
+                <path d="M9 9h6v6H9z"></path>
+              </svg>
+              <span>Filters</span>
+            </button>
+            <div class="sort-select-wrapper">
+              <select id="sort-by" aria-label="Sort products">
+                <option value="name">Sort by name</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+                <option value="newest">Newest first</option>
+              </select>
+            </div>
+          </div>
+
+          <aside class="filters-panel" id="filters-panel" aria-label="Product filters">
+            <div class="filters-header">
+              <h3>Filters</h3>
+              <button class="close-filters" id="close-filters" aria-label="Close filters">×</button>
+            </div>
+            <div class="filters-content">
+              <fieldset id="category-filters" class="filter-group">
+              </fieldset>
+              <fieldset class="filter-group">
+                <legend>Price range</legend>
+                <div class="price-inputs">
+                  <label>
+                    <span>Min</span>
+                    <input type="number" id="price-min" step="1" placeholder="0"
+                      aria-describedby="price-range-hint" />
+                  </label>
+                  <label>
+                    <span>Max</span>
+                    <input type="number" id="price-max" step="1" placeholder="Any"
+                      aria-describedby="price-range-hint" />
+                  </label>
+                </div>
+                <span class="field-hint" id="price-range-hint">
+                  Leave blank for every price.
+                </span>
+              </fieldset>
+              <fieldset class="filter-group">
+                <legend>Availability</legend>
+                <label class="filter-option">
+                  <input type="checkbox" id="in-stock" />
+                  <span>In stock only</span>
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" id="on-sale" />
+                  <span>On sale</span>
+                </label>
+              </fieldset>
+
+              <button class="btn btn-light" id="clear-filters" type="button">Clear all filters</button>
+            </div>
+          </aside>
+
+          <div class="results-toolbar">
+            <span id="results-count" class="results-count" aria-live="polite"></span>
+            <div id="active-filters" class="active-filters" aria-live="polite"></div>
+          </div>
+
+          <section class="catalog panel" id="categories">
+            <div class="category-row">
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=500&q=80" alt="Women" /></div>
+                <div>Women</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80" alt="Men" /></div>
+                <div>Men</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=500&q=80" alt="Dresses" /></div>
+                <div>Dresses</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80" alt="Tops" /></div>
+                <div>Tops</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=500&q=80" alt="Shoes" /></div>
+                <div>Shoes</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80" alt="Bags" /></div>
+                <div>Bags</div>
+              </div>
+              <div class="category-item sale-tag">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80" alt="Sale" /></div>
+                <div>Sale</div>
+              </div>
+            </div>
+          </section>
+
+          <div class="section-header" id="featured">
+            <h2 class="section-title">Featured pieces</h2>
+            <a href="index.html#featured-products" class="link-more">Back home</a>
+          </div>
+
+          <section class="product-grid product-wrap">
+            <article class="product-card" data-product-id="linen-blend-blazer" data-name="Linen Blend Blazer" data-price="89.99" data-image="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80">
+              <div class="product-image">
+                <a class="product-image-link" href="product.html?id=linen-blend-blazer" aria-label="View Linen Blend Blazer">
+                  <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80" alt="Linen blend blazer" />
+                </a>
+                <button type="button" class="wishlist" data-product-id="linen-blend-blazer" aria-pressed="false" aria-label="Save Linen Blend Blazer to wishlist">♡</button>
+              </div>
+              <div class="product-info">
+                <a class="product-name-link" href="product.html?id=linen-blend-blazer"><h3 class="product-name">Linen Blend Blazer</h3></a>
+                <div class="price-line">
+                  <span class="price-text">$89.99</span>
+                  <span class="old-price">$129.99</span>
+                </div>
+                <button class="add-to-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="ribbed-knit-top" data-name="Ribbed Knit Top" data-price="25.99" data-image="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80">
+              <div class="product-image">
+                <a class="product-image-link" href="product.html?id=ribbed-knit-top" aria-label="View Ribbed Knit Top">
+                  <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80" alt="Ribbed knit top" />
+                </a>
+                <button type="button" class="wishlist" data-product-id="ribbed-knit-top" aria-pressed="false" aria-label="Save Ribbed Knit Top to wishlist">♡</button>
+              </div>
+              <div class="product-info">
+                <a class="product-name-link" href="product.html?id=ribbed-knit-top"><h3 class="product-name">Ribbed Knit Top</h3></a>
+                <div class="price-line">
+                  <span class="price-text">$25.99</span>
+                  <span class="old-price">$49.00</span>
+                </div>
+                <button class="add-to-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="wide-leg-trousers" data-name="Wide Leg Trousers" data-price="59.99" data-image="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80">
+              <div class="product-image">
+                <a class="product-image-link" href="product.html?id=wide-leg-trousers" aria-label="View Wide Leg Trousers">
+                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80" alt="Wide leg trousers" />
+                </a>
+                <button type="button" class="wishlist" data-product-id="wide-leg-trousers" aria-pressed="false" aria-label="Save Wide Leg Trousers to wishlist">♡</button>
+              </div>
+              <div class="product-info">
+                <a class="product-name-link" href="product.html?id=wide-leg-trousers"><h3 class="product-name">Wide Leg Trousers</h3></a>
+                <div class="price-line">
+                  <span class="price-text">$59.99</span>
+                  <span class="old-price">$85.99</span>
+                </div>
+                <button class="add-to-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="leather-shoulder-bag" data-name="Leather Shoulder Bag" data-price="79.99" data-image="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80">
+              <div class="product-image">
+                <a class="product-image-link" href="product.html?id=leather-shoulder-bag" aria-label="View Leather Shoulder Bag">
+                  <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80" alt="Leather shoulder bag" />
+                </a>
+                <button type="button" class="wishlist" data-product-id="leather-shoulder-bag" aria-pressed="false" aria-label="Save Leather Shoulder Bag to wishlist">♡</button>
+              </div>
+              <div class="product-info">
+                <a class="product-name-link" href="product.html?id=leather-shoulder-bag"><h3 class="product-name">Leather Shoulder Bag</h3></a>
+                <div class="price-line">
+                  <span class="price-text">$79.99</span>
+                  <span class="old-price">$110.00</span>
+                </div>
+                <button class="add-to-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="minimalist-strappy-heels" data-name="Minimalist Strappy Heels" data-price="49.99" data-image="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80">
+              <div class="product-image">
+                <a class="product-image-link" href="product.html?id=minimalist-strappy-heels" aria-label="View Minimalist Strappy Heels">
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80" alt="Minimalist strappy heels" />
+                </a>
+                <button type="button" class="wishlist" data-product-id="minimalist-strappy-heels" aria-pressed="false" aria-label="Save Minimalist Strappy Heels to wishlist">♡</button>
+              </div>
+              <div class="product-info">
+                <a class="product-name-link" href="product.html?id=minimalist-strappy-heels"><h3 class="product-name">Minimalist Strappy Heels</h3></a>
+                <div class="price-line">
+                  <span class="price-text">$49.99</span>
+                  <span class="old-price">$79.00</span>
+                </div>
+                <button class="add-to-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <div class="brand-foot">LUNORA</div>
+          <div class="footer-copy">Timeless pieces for everyday ritual and elevated moments.</div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li>New Arrivals</li>
+            <li>Women</li>
+            <li>Men</li>
+            <li>Sale</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li>Shipping</li>
+            <li>Returns</li>
+            <li>Support</li>
+            <li>FAQs</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li>Our Story</li>
+            <li>Journal</li>
+            <li>Careers</li>
+            <li>Store Locator</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <div class="socials">
+            <a href="#">◎</a>
+            <a href="#">f</a>
+            <a href="#">x</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="filters-overlay" class="filters-overlay" aria-hidden="true"></div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

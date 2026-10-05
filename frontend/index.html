@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FashionHub</title>
+    <meta name="description" content="FashionHub — timeless pieces crafted for comfort and designed for everyday elegance. Explore new collections, curated picks, and exclusive offers." />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="announcement-bar" data-setting="announcement"
+      data-setting-hide-when-empty="true" role="status" hidden></div>
+
+    <div class="page-shell">
+      <div class="container">
+        <header class="topbar">
+          <div class="brand-wrap">
+            <div class="brand">LUNORA</div>
+            <nav class="main-nav" aria-label="Main navigation" data-nav-slot>
+              <a href="shop.html#featured">New In</a>
+              <a href="shop.html#featured">Best Sellers</a>
+              <a href="shop.html#categories">Accessories</a>
+              <a href="lookbook.html">Journal</a>
+            </nav>
+          </div>
+<form class="search-bar" action="shop.html" method="get" role="search">
+  <button type="submit" class="search-button" aria-label="Search">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"></circle>
+      <path d="M21 21l-4.35-4.35"></path>
+    </svg>
+  </button>
+
+  <input
+    type="search"
+    name="q"
+    placeholder="Search products..."
+    aria-label="Search products"
+  >
+</form>
+          <div class="account-slot" data-account-slot></div>
+          <button class="cart-toggle" type="button" aria-label="Open cart" aria-expanded="false" aria-controls="cart-panel">
+            <span>Cart</span>
+            <span class="cart-count">0</span>
+          </button>
+        </header>
+
+        <aside id="cart-panel" class="cart-panel" role="dialog" aria-hidden="true" aria-labelledby="cart-title" aria-live="polite">
+          <div class="cart-header">
+            <h3 id="cart-title">Your Cart</h3>
+            <button class="close-cart" type="button" aria-label="Close cart">×</button>
+          </div>
+          <ul class="cart-items">
+            <li class="empty-cart">Your cart is empty.</li>
+          </ul>
+          <div class="cart-footer">
+            <div class="cart-total-row">
+              <span>Total</span>
+              <strong class="cart-total">$0.00</strong>
+            </div>
+            <button class="checkout-btn" type="button">Checkout</button>
+          </div>
+        </aside>
+
+        <main id="main">
+          <section class="hero">
+            <div class="hero-copy">
+              <div class="eyebrow" data-setting="heroEyebrow">New Collection</div>
+              <h1 data-setting="heroTitle">Elevate Your Everyday Style</h1>
+              <div class="subtitle" data-setting="heroSubtitle">
+                Discover timeless pieces crafted for comfort, designed for elegance, made for you.
+              </div>
+
+              <div class="cta-row">
+                <a href="shop.html" class="btn btn-primary"
+                  data-setting="heroCtaPrimaryLabel"
+                  data-setting-href="heroCtaPrimaryHref">Shop Now →</a>
+                <a href="lookbook.html" class="btn btn-light"
+                  data-setting="heroCtaSecondaryLabel"
+                  data-setting-href="heroCtaSecondaryHref">▶ Watch Lookbook</a>
+              </div>
+
+              <div class="mini-features">
+                <div class="feature-item">
+                  <div class="feature-icon">◌</div>
+                  <div class="feature-copy">
+                    <strong data-setting="feature1Title">Free Shipping</strong>
+                    <span data-setting="feature1Text">On orders over $99</span>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">↺</div>
+                  <div class="feature-copy">
+                    <strong data-setting="feature2Title">Easy Returns</strong>
+                    <span data-setting="feature2Text">30-day returns</span>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">✓</div>
+                  <div class="feature-copy">
+                    <strong data-setting="feature3Title">Secure Payment</strong>
+                    <span data-setting="feature3Text">100% protected</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-media">
+                <div class="portrait">
+                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" alt="Fashion model in neutral blazer" width="900" height="630" loading="eager" decoding="sync"
+                  data-setting-src="heroImage" data-setting-alt="heroImageAlt" />
+              </div>
+              <div class="hero-rail">
+                <span>01</span>
+                <span>02</span>
+                <span>03</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="catalog panel" id="categories">
+            <div class="category-row">
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=500&q=80" alt="Women's bag" width="500" height="500" loading="lazy" decoding="async" /></div>
+                <div>Women</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80" alt="Men's outfit" width="500" height="500" loading="lazy" decoding="async" /></div>
+                <div>Men</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=500&q=80" alt="Dresses" width="500" height="500" loading="lazy" decoding="async" /></div>
+                <div>Dresses</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80" alt="Tops" width="500" height="500" loading="lazy" decoding="async" /></div>
+                <div>Tops</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=500&q=80" alt="Shoes" width="500" height="500" loading="lazy" decoding="async" /></div>
+                <div>Shoes</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80" alt="Bags" width="500" height="500" loading="lazy" decoding="async" /></div>
+                <div>Bags</div>
+              </div>
+              <div class="category-item">
+                <div class="category-visual"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80" alt="Accessories" width="500" height="500" loading="lazy" decoding="async" /></div>
+                <div>Accessories</div>
+              </div>
+            </div>
+          </section>
+
+          <div class="section-header" id="style-collection">
+            <h2 class="section-title">Find Your Perfect Style</h2>
+            <a href="shop.html#categories" class="link-more">
+              View All Categories
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <section class="style-grid">
+            <article class="style-card">
+              <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" alt="Women's collection" width="900" height="630" loading="lazy" decoding="async" />
+              <div class="overlay"></div>
+              <div class="content">
+                <div>
+                  <h3>Women's Collection</h3>
+                  <small>Explore Now</small>
+                </div>
+                <span class="arrow-chip">→</span>
+              </div>
+            </article>
+
+            <article class="style-card">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80" alt="Men's collection" width="900" height="630" loading="lazy" decoding="async" />
+              <div class="overlay"></div>
+              <div class="content">
+                <div>
+                  <h3>Men's Collection</h3>
+                  <small>Explore Now</small>
+                </div>
+                <span class="arrow-chip">→</span>
+              </div>
+            </article>
+
+            <article class="style-card">
+              <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80" alt="Dresses" width="900" height="630" loading="lazy" decoding="async" />
+              <div class="overlay"></div>
+              <div class="content">
+                <div>
+                  <h3>Dresses</h3>
+                  <small>Explore Now</small>
+                </div>
+                <span class="arrow-chip">→</span>
+              </div>
+            </article>
+
+            <article class="style-card">
+              <img src="https://i.pinimg.com/736x/bd/73/a8/bd73a8e8111bb96b15057e346de4a293.jpg" alt="Accessories" width="900" height="630" loading="lazy" decoding="async" />
+              <div class="overlay"></div>
+              <div class="content">
+                <div>
+                  <h3>Accessories</h3>
+                  <small>Explore Now</small>
+                </div>
+                <span class="arrow-chip">→</span>
+              </div>
+            </article>
+          </section>
+
+          <section class="promo-grid" id="sale">
+            <article class="promo-card light">
+                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80" alt="Spring sale" width="1200" height="800" loading="lazy" decoding="async" />
+              <div class="promo-inner">
+                <div class="promo-label">Limited time offer</div>
+                <div class="promo-heading">Spring Sale Up to 50% Off</div>
+                <a href="shop.html#sale" class="btn btn-dark">Shop The Sale →</a>
+              </div>
+            </article>
+
+            <article class="promo-card">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80" alt="Fresh arrivals" width="1200" height="800" loading="lazy" decoding="async" />
+              <div class="promo-inner">
+                <div class="promo-label">New arrivals</div>
+                <div class="promo-heading">Fresh Styles Just Landed</div>
+                <a href="shop.html#featured" class="btn btn-dark">Explore Now →</a>
+              </div>
+            </article>
+          </section>
+
+          <div class="section-header" id="featured-products">
+            <h2 class="section-title" data-setting="featuredSectionTitle">Our Most Loved Picks</h2>
+            <a href="shop.html#featured" class="link-more"
+              data-setting="featuredSectionLinkLabel"
+              data-setting-href="featuredSectionLinkHref">
+              View All Products
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <section class="product-grid product-wrap" id="featured" data-featured-only="true">
+            <article class="product-card" data-product-id="linen-blend-blazer" data-name="Linen Blend Blazer" data-price="89.99" data-image="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80">
+              <div class="product-image">
+                <a class="product-image-link" href="product.html?id=linen-blend-blazer" aria-label="View Linen Blend Blazer">
+                  <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80" alt="Linen blend blazer" />
+                </a>
+                <button type="button" class="wishlist" data-product-id="linen-blend-blazer" aria-pressed="false" aria-label="Save Linen Blend Blazer to wishlist">♡</button>
+              </div>
+              <div class="product-info">
+                <a class="product-name-link" href="product.html?id=linen-blend-blazer"><h3 class="product-name">Linen Blend Blazer</h3></a>
+                <div class="price-line">
+                  <span class="price-text">$89.99</span>
+                  <span class="old-price">$129.99</span>
+                </div>
+                <div>
+                  <span class="rating">★★★★★</span>
+                  <span class="reviews">(124)</span>
+                </div>
+                <button class="add-to-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="ribbed-knit-top" data-name="Ribbed Knit Top" data-price="25.99" data-image="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80">
+              <div class="product-image">
+                <a class="product-image-link" href="product.html?id=ribbed-knit-top" aria-label="View Ribbed Knit Top">
+                  <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80" alt="Ribbed knit top" />
+                </a>
+                <button type="button" class="wishlist" data-product-id="ribbed-knit-top" aria-pressed="false" aria-label="Save Ribbed Knit Top to wishlist">♡</button>
+              </div>
+              <div class="product-info">
+                <a class="product-name-link" href="product.html?id=ribbed-knit-top"><h3 class="product-name">Ribbed Knit Top</h3></a>
+                <div class="price-line">
+                  <span class="price-text">$25.99</span>
+                  <span class="old-price">$49.00</span>
+                </div>
+                <div>
+                  <span class="rating">★★★★★</span>
+                  <span class="reviews">(98)</span>
+                </div>
+                <button class="add-to-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="wide-leg-trousers" data-name="Wide Leg Trousers" data-price="59.99" data-image="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80">
+              <div class="product-image">
+                <a class="product-image-link" href="product.html?id=wide-leg-trousers" aria-label="View Wide Leg Trousers">
+                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80" alt="Wide leg trousers" />
+                </a>
+                <button type="button" class="wishlist" data-product-id="wide-leg-trousers" aria-pressed="false" aria-label="Save Wide Leg Trousers to wishlist">♡</button>
+              </div>
+              <div class="product-info">
+                <a class="product-name-link" href="product.html?id=wide-leg-trousers"><h3 class="product-name">Wide Leg Trousers</h3></a>
+                <div class="price-line">
+                  <span class="price-text">$59.99</span>
+                  <span class="old-price">$85.99</span>
+                </div>
+                <div>
+                  <span class="rating">★★★★★</span>
+                  <span class="reviews">(181)</span>
+                </div>
+                <button class="add-to-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="leather-shoulder-bag" data-name="Leather Shoulder Bag" data-price="79.99" data-image="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80">
+              <div class="product-image">
+                <a class="product-image-link" href="product.html?id=leather-shoulder-bag" aria-label="View Leather Shoulder Bag">
+                  <img src="https://i.pinimg.com/736x/ee/57/46/ee57464274c81f8b4493292ecf30c3af.jpg" alt="Leather shoulder bag" />
+                </a>
+                <button type="button" class="wishlist" data-product-id="leather-shoulder-bag" aria-pressed="false" aria-label="Save Leather Shoulder Bag to wishlist">♡</button>
+              </div>
+              <div class="product-info">
+                <a class="product-name-link" href="product.html?id=leather-shoulder-bag"><h3 class="product-name">Leather Shoulder Bag</h3></a>
+                <div class="price-line">
+                  <span class="price-text">$79.99</span>
+                  <span class="old-price">$110.00</span>
+
+                </div>
+                <div>
+                  <span class="rating">★★★★★</span>
+                  <span class="reviews">(112)</span>
+                </div>
+                <button class="add-to-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="minimalist-strappy-heels" data-name="Minimalist Strappy Heels" data-price="49.99" data-image="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80">
+              <div class="product-image">
+                <a class="product-image-link" href="product.html?id=minimalist-strappy-heels" aria-label="View Minimalist Strappy Heels">
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80" alt="Minimalist straps heels" />
+                </a>
+                <button type="button" class="wishlist" data-product-id="minimalist-strappy-heels" aria-pressed="false" aria-label="Save Minimalist Strappy Heels to wishlist">♡</button>
+              </div>
+              <div class="product-info">
+                <a class="product-name-link" href="product.html?id=minimalist-strappy-heels"><h3 class="product-name">Minimalist Strappy Heels</h3></a>
+                <div class="price-line">
+                  <span class="price-text">$49.99</span>
+                  <span class="old-price">$79.00</span>
+                </div>
+                <div>
+                  <span class="rating">★★★★★</span>
+                  <span class="reviews">(164)</span>
+                </div>
+                <button class="add-to-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+          </section>
+
+          <div class="trust-bar">
+            <div class="trust-item">
+              <div class="trust-icon">✦</div>
+              <div>
+                <strong>Free Shipping</strong>
+                <span>On orders over $99</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">↺</div>
+              <div>
+                <strong>Easy Returns</strong>
+                <span>30-day returns</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">✓</div>
+              <div>
+                <strong>Secure Payment</strong>
+                <span>100% protected</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">◔</div>
+              <div>
+                <strong>24/7 Support</strong>
+                <span>We’re here to help</span>
+              </div>
+            </div>
+          </div>
+
+          <section class="newsletter">
+            <div class="newsletter-wrap">
+              <div class="newsletter-card">
+                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1100&q=80" alt="Woman with neutral outfit" />
+              </div>
+
+              <div class="newsletter-content">
+                <div class="newsletter-kicker" data-setting="newsletterKicker">Get 10% off your first order</div>
+                <h2 data-setting="newsletterTitle">Join Our Style List</h2>
+                <p data-setting="newsletterText">Sign up for exclusive offers, new arrivals, and style inspiration.</p>
+                <form class="subscribe-form" novalidate>
+                  <label class="visually-hidden" for="newsletter-email">Email address</label>
+                  <input
+                    type="email"
+                    id="newsletter-email"
+                    name="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                  />
+                  <button type="submit">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <div class="brand-foot">LUNORA</div>
+          <div class="footer-copy" data-setting="footerBlurb">Timeless fashion for every mood, crafted with care and designed for everyday elegance.</div>
+          <div class="socials">
+            <a href="#">◎</a>
+            <a href="#">f</a>
+            <a href="#">x</a>
+            <a href="#">◎</a>
+          </div>
+        </div>
+
+        
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li>All Products</li>
+            <li>New Arrivals</li>
+            <li>Women</li>
+            <li>Men</li>
+            <li>Sale</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li>Contact Us</li>
+            <li>Shipping &amp; Delivery</li>
+            <li>Returns &amp; Exchanges</li>
+            <li>Size Guide</li>
+            <li>FAQs</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul>
+            <li>Our Story</li>
+            <li>Sustainability</li>
+            <li>Careers</li>
+            <li>Press</li>
+            <li>Store Locator</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay Connected</h4>
+          <div class="footer-copy">Sign up for updates and get 10% off your first order.</div>
+          <form class="footer-email" novalidate>
+            <label class="visually-hidden" for="footer-email-input">Email address</label>
+            <input
+              type="email"
+              id="footer-email-input"
+              name="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required
+            />
+            <button type="submit" aria-label="Subscribe">→</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

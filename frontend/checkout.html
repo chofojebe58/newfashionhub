@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FashionHub | Checkout</title>
+    <meta name="description" content="Complete your FashionHub order." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#checkout-main">Skip to checkout</a>
+
+    <div class="page-shell">
+      <div class="container checkout-shell">
+        <header class="topbar">
+          <a class="brand" href="index.html">LUNORA</a>
+          <div class="account-slot" data-account-slot></div>
+          <a href="shop.html" class="link-more">Continue shopping</a>
+        </header>
+
+        <main class="checkout-layout" id="checkout-main">
+          <section class="checkout-panel">
+            <p class="eyebrow">Checkout</p>
+            <h1>Secure your pieces</h1>
+
+            <form class="checkout-form" novalidate aria-label="Checkout form">
+              <fieldset class="form-section">
+                <legend>Contact</legend>
+                <label>
+                  <span>Email</span>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="jane@example.com"
+                    autocomplete="email"
+                    required
+                    aria-required="true"
+                  />
+                </label>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Shipping address</legend>
+                <div class="form-grid">
+                  <label>
+                    <span>First name</span>
+                    <input
+                      type="text"
+                      name="firstName"
+                      id="firstName"
+                      placeholder="Jane"
+                      autocomplete="given-name"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+                  <label>
+                    <span>Last name</span>
+                    <input
+                      type="text"
+                      name="lastName"
+                      id="lastName"
+                      placeholder="Smith"
+                      autocomplete="family-name"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+                </div>
+
+                <label>
+                  <span>Address</span>
+                  <textarea
+                    name="address"
+                    id="address"
+                    rows="3"
+                    placeholder="123 Bloom Street"
+                    autocomplete="street-address"
+                    required
+                    aria-required="true"
+                  ></textarea>
+                </label>
+
+                <div class="form-grid">
+                  <label>
+                    <span>City</span>
+                    <input
+                      type="text"
+                      name="city"
+                      id="city"
+                      placeholder="London"
+                      autocomplete="address-level2"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+                  <label>
+                    <span>Postal code</span>
+                    <input
+                      type="text"
+                      name="postalCode"
+                      id="postalCode"
+                      placeholder="SW1A 1AA"
+                      autocomplete="postal-code"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+                </div>
+
+                <label>
+                  <span>Country</span>
+                  <select name="country" id="country" autocomplete="country-name">
+                    <option value="US" selected>United States</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                    <option value="DE">Germany</option>
+                    <option value="FR">France</option>
+                    <option value="NG">Nigeria</option>
+                  </select>
+                </label>
+              </fieldset>
+
+              <fieldset class="payment-section">
+                <legend>Payment</legend>
+
+                <p class="demo-payment-note" role="note" data-payment-notice>
+                  Checking payment mode…
+                </p>
+
+                <p class="payment-error" role="alert" tabindex="-1" data-payment-error hidden></p>
+
+                <label>
+                  <span>Name on card</span>
+                  <input
+                    type="text"
+                    name="cardname"
+                    id="cardname"
+                    placeholder="Jane Smith"
+                    autocomplete="cc-name"
+                    required
+                    aria-required="true"
+                  />
+                </label>
+
+                <label>
+                  <span>Card number</span>
+                  <input
+                    type="text"
+                    name="cardnumber"
+                    id="cardnumber"
+                    placeholder="4242 4242 4242 4242"
+                    inputmode="numeric"
+                    autocomplete="cc-number"
+                    maxlength="23"
+                    required
+                    aria-required="true"
+                  />
+                </label>
+
+                <div class="form-grid">
+                  <label>
+                    <span>Expiry (MM/YY)</span>
+                    <input
+                      type="text"
+                      name="exp"
+                      id="exp"
+                      placeholder="04/28"
+                      inputmode="numeric"
+                      autocomplete="cc-exp"
+                      maxlength="5"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+                  <label>
+                    <span>CVC</span>
+                    <input
+                      type="text"
+                      name="cvc"
+                      id="cvc"
+                      placeholder="123"
+                      inputmode="numeric"
+                      autocomplete="cc-csc"
+                      maxlength="4"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+                </div>
+              </fieldset>
+
+              <button type="submit" class="btn btn-primary checkout-submit">Place order</button>
+
+              <p class="payment-fine-print">
+                Payments are processed by <strong data-payment-provider>the store</strong>.
+                Card details are authorised and discarded — only the last four digits are kept.
+              </p>
+            </form>
+          </section>
+
+          <aside class="checkout-summary" aria-label="Order summary">
+            <h2>Order summary</h2>
+            <div id="summary-items">
+              <div class="summary-loading" aria-live="polite">Loading your cart…</div>
+            </div>
+
+            <p id="free-shipping-note" class="free-shipping-note" hidden></p>
+
+            <div class="summary-total">
+              <span>Subtotal</span>
+              <strong id="summary-subtotal">$0.00</strong>
+            </div>
+            <div class="summary-total">
+              <span>Shipping</span>
+              <strong id="summary-shipping">Free</strong>
+            </div>
+            <div class="summary-total">
+              <span>Estimated tax</span>
+              <strong id="summary-tax">$0.00</strong>
+            </div>
+            <div class="summary-total grand-total">
+              <span>Total</span>
+              <strong id="summary-total">$0.00</strong>
+            </div>
+          </aside>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="/src/pages/checkout.ts"></script>
+  </body>
+</html>

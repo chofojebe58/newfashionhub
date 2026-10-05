@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FashionHub | Product Detail</title>
+    <meta name="description" content="Product details, sizes and colours for this FashionHub piece." />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#product-detail-root">Skip to product details</a>
+
+    <div class="page-shell">
+      <div class="container product-detail-shell">
+        <header class="topbar">
+          <a class="brand" href="index.html">LUNORA</a>
+          <div class="account-slot" data-account-slot></div>
+          <button class="cart-toggle" type="button" aria-label="Open cart"
+            aria-expanded="false" aria-controls="cart-panel">
+            <span>Cart</span>
+            <span class="cart-count">0</span>
+          </button>
+        </header>
+
+        <aside id="cart-panel" class="cart-panel" role="dialog" aria-modal="false"
+          aria-hidden="true" aria-labelledby="cart-title" aria-live="polite">
+          <div class="cart-header">
+            <h3 id="cart-title">Your Cart</h3>
+            <button class="close-cart" type="button" aria-label="Close cart">×</button>
+          </div>
+          <ul class="cart-items">
+            <li class="empty-cart">Your cart is empty.</li>
+          </ul>
+          <div class="cart-footer">
+            <div class="cart-total-row">
+              <span>Total</span>
+              <strong class="cart-total">$0.00</strong>
+            </div>
+            <button class="checkout-btn" type="button">Checkout</button>
+          </div>
+        </aside>
+
+        <main id="product-detail-root" class="product-detail" aria-live="polite"></main>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

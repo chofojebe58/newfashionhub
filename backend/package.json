@@ -1,0 +1,38 @@
+{
+  "name": "fashionhub-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "db:init": "node db/init.js",
+    "db:migrate": "node db/migrate.js",
+    "db:seed": "node db/seed.js",
+    "db:promote": "node db/promote-admin.js",
+    "db:demote": "node db/demote-admin.js",
+    "db:setup": "npm run db:migrate && npm run db:seed",
+    "check": "node --check server.js",
+    "test": "node --test tests/",
+    "test:watch": "node --test --watch tests/"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.0",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "stripe": "^14.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.10.0"
+  },
+  "description": "FashionHub (LUNORA) storefront API \u2014 Express + SQLite"
+}

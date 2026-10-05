@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FashionHub | Store admin</title>
+    <meta name="description" content="LUNORA store administration." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body class="admin-body">
+    <a class="skip-link" href="#admin-root">Skip to admin content</a>
+
+    <div class="page-shell">
+      <div class="container admin-container">
+        <main id="admin-root" class="admin-root" aria-live="polite">
+          <p class="admin-loading">Loading the admin panel…</p>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="/src/pages/admin.ts"></script>
+  </body>
+</html>
